@@ -31,7 +31,7 @@ public class BankServiceImpl implements BankService {
     private CurrencyService service;
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public void credit(BankTransaction bankTransaction) {
 
         Optional<Account> account = bankDaoImpl.findAccountById(bankTransaction.getAccountId());
@@ -48,7 +48,7 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public void debit(BankTransaction bankTransaction) {
 
         Optional<Account> account = bankDaoImpl.findAccountById(bankTransaction.getAccountId());
