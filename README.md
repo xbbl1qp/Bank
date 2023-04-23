@@ -4,7 +4,7 @@ How to Run This App ?
 
 **Step 2**: Create Network on for both the container to communicate in Docker.
 
-`docker network create docker-network`
+`**docker network create docker-network**`
 
 **Step 3**: Install MySql Docker Image using below command and run using the above created network.
 
