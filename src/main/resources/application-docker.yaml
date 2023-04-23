@@ -1,0 +1,20 @@
+logging.level:
+  com.godel: INFO
+  org.springframework: INFO
+  org.hibernate: INFO
+
+spring:
+    datasource:
+      url: jdbc:mysql://mysqldb:3306/bank?useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    flyway:
+      enabled: true
+      schemas: bank
+      baseline-on-migrate: true
+      url: jdbc:mysql://mysqldb:3306?useSSL=false&allowPublicKeyRetrieval=true
+      user: root
+      password: root
+      init-sqls: CREATE DATABASE IF NOT EXISTS bank;
